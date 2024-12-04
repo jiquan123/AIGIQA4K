@@ -18,15 +18,17 @@ This is the official repo of the paper [PKU-AIGIQA-4K: A Perceptual Quality Asse
 ## Three IQA methods based on pre-trained models
 
 ### NR-AIGCIQA
-![NR](https://github.com/jiquan123/AIGIQA4K/blob/main/Fig/NR.png)
+
+<img src="./Fig/NR.png" width="600" height="200">
 
 ### FR-AIGCIQA
-![FR](https://github.com/jiquan123/AIGIQA4K/blob/main/Fig/FR.png)
+<img src="./Fig/FR.png" width="600" height="300">
 
 ### PR-AIGCIQA
-![FR](https://github.com/jiquan123/AIGIQA4K/blob/main/Fig/PR.png)
+<img src="./Fig/PR.png" width="750" height="300">
 
-### Pre-trained visual backbone
+
+## Pre-trained visual backbone
 For feature extraction from input images, we selected several backbone
 network models pre-trained on the ImageNet dataset, including:
 -  VGG16 [weights](https://download.pytorch.org/models/vgg16-397923af.pth)
@@ -34,17 +36,70 @@ network models pre-trained on the ImageNet dataset, including:
 -  ResNet18 [weights](https://download.pytorch.org/models/resnet18-f37072fd.pth)
 -  ResNet50 [weights](https://download.pytorch.org/models/resnet50-0676ba61.pth)
 -  InceptionV4 [weights](http://data.lip6.fr/cadene/pretrainedmodels/inceptionv4-8e4777a0.pth)
--  ViT_large_patch16_224 [百度网盘](https://pan.baidu.com/s/1xXpgvmHpipYeYym9D3sKHA?pwd=vitl) 
 
+## Installation
 
-### Database
+- Create environment
+
+```
+# clone this repo
+git clone https://github.com/jiquan123/AIGIQA4K.git
+cd AIGIQA4K
+
+# create environment
+conda create -n iqa 
+conda activate iqa
+pip install -r requirements.txt
+```
+
+## Database
 The constructed PKU-AIGIQA-4K database can be accessed using the links below.
 Download PKU-AIGIQA-4K database:
 1.[[百度网盘](https://pan.baidu.com/s/1Co7Sca7Yl_RWNz_UP7zHuA) 
 (提取码：AIGI)].
 2.[[Google Drive](https://drive.google.com/file/d/1EuXe_6UNONJSH91uI3edrMMe7utOmpFz/view?usp=sharing)]
 
-### Contact
+The data structure used for this repo should be:
+```
+├── Dataset
+│   ├── PKU-AIGIQA-4K
+│   │   ├── All
+│   │   │   ├── DALLE_1000_00.jpg
+│   │   │   ├── ...
+│   │   │   ├── SD_1199_11.jpg
+│   │   ├── I2I
+│   │   │   ├── Generated_image
+│   │   │   │   ├── All
+│   │   │   │   │   ├── ....jpg
+│   │   │   │   ├── MJ
+│   │   │   │   │   ├── ....jpg
+│   │   │   │   ├── SD
+│   │   │   │   │   ├── ....jpg
+│   │   │   ├── Image_prompt
+│   │   │   │   ├── 0.jpg
+│   │   │   │   ├── ...
+│   │   │   │   ├── 199.jpg
+│   │   ├── T2I
+│   │   │   ├── All
+│   │   │   │   ├── ....jpg
+│   │   │   ├── DALLE
+│   │   │   │   ├── ....jpg
+│   │   │   ├── SD
+│   │   │   │   ├── ....jpg
+│   │   │   ├── MJ
+│   │   │   │   ├── ....jpg
+│   │   │   ├── SD
+│   │   │   │   ├── ....jpg
+│   │   ├── annotation.xlsx
+```
+
+## Training
+For how to train the NR-AIGCIQA/FR-AIGCIQA/PR-AIGCIQA model, please refer to [./PKU-AIGIQA-4K/AIGIQA4K/README.md](./PKU-AIGIQA-4K/AIGIQA4K/README.md).
+
+For how to train the TIER-NR/TIER-FR/TIER-PR model, please refer to [./PKU-AIGIQA-4K/TIER-4K/README.md](./PKU-AIGIQA-4K/TIER-4K/README.md).
+
+
+## Contact
 If you have any question, please contact yuanjiquan@stu.pku.edu.cn
 
 
